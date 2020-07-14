@@ -1,9 +1,9 @@
 /*--------------------------------*- C++ -*----------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v1806                                 |
-|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
-|    \\/     M anipulation  |                                                 |
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
@@ -15,13 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-//dynamicFvMesh   dynamicRefineFvMesh;
-dynamicFvMesh   dynamicRefine2DFvMesh;
-
-
-dynamicRefine2DFvMeshCoeffs{
-
-nBufferLayersR 1;
+dynamicFvMesh   dynamicRefineFvMesh;
 
 // How often to refine
 refineInterval  1;
@@ -29,7 +23,7 @@ refineInterval  1;
 // Field to be refinement on
 field           alpha.biofilm;
 
-// Refine field inbetween lower..upper
+// Refine field in between lower..upper
 lowerRefineLevel 0.001;
 upperRefineLevel 0.999;
 
@@ -59,6 +53,6 @@ correctFluxes
 
 // Write the refinement level as a volScalarField
 dumpLevel       true;
-};
+
 
 // ************************************************************************* //

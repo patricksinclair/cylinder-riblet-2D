@@ -25,12 +25,14 @@ bf_backend #calc "$bf_zOffset+$bf_length";
 
 regions
 (
-    boxToCell
+    cylinderToCell
     {
-        box (0 0 $bf_zOffset) ($bf_width $bf_thickness $bf_backend);
+      p1 (0 0 -1); //Min
+      p2 (0 0 1); //Max
+      radius 42e-6;
         fieldValues
         (
-            volScalarFieldValue alpha.biofilm 0
+            volScalarFieldValue alpha.biofilm 1
         );
     }
 );
